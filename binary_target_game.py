@@ -44,6 +44,8 @@ BLUE = (0, 100, 255)
 BLACK = (0, 0, 0)
 PURPLE = (128, 0, 128)
 DARK_GRAY = (80, 80, 80)
+GREEN = (0, 255, 0)
+YELLOW = (255, 255, 0)
 
 # Instructions
 show_instructions = True
@@ -177,7 +179,7 @@ def spawn_wave():
     return t
 
 def reset_game():
-    global score, targets, wave_start_time, sniper_spawn_time, sniper_killed_player, sniper_fired, game_over, bullseye_x, bullseye_y, fade_alpha, game_start_time
+    global score, targets, wave_start_time, sniper_spawn_time, sniper_killed_player, sniper_fired, game_over, bullseye_x, bullseye_y, fade_alpha, game_start_time, wave_count, you_win
     score = 0
     sniper_killed_player = False
     fade_alpha = 0
@@ -187,6 +189,8 @@ def reset_game():
     targets.extend(spawn_wave())
     game_over = False
     game_start_time = pygame.time.get_ticks()
+    wave_count = 0
+    you_win = False
 
 
 # First wave
