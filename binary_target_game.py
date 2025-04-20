@@ -4,6 +4,15 @@ import random
 import math
 import os
 
+# Get the absolute path of the script
+script_path = os.path.abspath(__file__)
+
+# Get the directory of the script
+script_dir = os.path.dirname(script_path)
+
+# Change the current working directory to the script's directory
+os.chdir(script_dir)
+
 def load_best_stats():
     global best_time, best_final_score
     if os.path.exists(BEST_STATS_FILE):
